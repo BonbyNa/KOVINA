@@ -1,9 +1,415 @@
-html<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <title>My Organization</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F6 결혼비자 테스트</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .phone-wrap {
+      width: 100%;
+      max-width: 430px;
+      background: #fff;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid #eee;
+      background: #fff;
+    }
+    .header .logo {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 900;
+      font-size: 20px;
+      color: #1a1aff;
+    }
+    .header .logo .x-mark {
+      color: #1a1aff;
+      font-style: normal;
+      font-size: 22px;
+    }
+    .page-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: #333;
+      margin-left: 16px;
+      padding-left: 16px;
+      border-left: 1px solid #ddd;
+    }
+
+    /* ── Pages ── */
+    .page {
+      display: none;
+      animation: fadeIn 0.35s ease;
+    }
+    .page.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ══════════════ PAGE 1 ══════════════ */
+    .hero-banner {
+      background: #fff3e0;
+      margin: 0;
+      padding: 32px 20px 28px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-title {
+      font-size: 40px;
+      font-weight: 900;
+      color: #ff6f00;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      text-shadow: 3px 3px 0 rgba(255,111,0,0.15);
+    }
+    .hero-title span { display: block; }
+    .couple-img {
+      margin-top: 18px;
+      font-size: 70px;
+      line-height: 1;
+    }
+    .squiggle {
+      position: absolute;
+      left: 18px;
+      bottom: 22px;
+      font-size: 28px;
+      color: #ff6f00;
+      opacity: 0.7;
+    }
+    .fork-icon {
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      font-size: 24px;
+    }
+
+    .content-section {
+      padding: 32px 24px 0;
+      text-align: center;
+    }
+    .main-question {
+      font-size: 19px;
+      font-weight: 700;
+      color: #222;
+      line-height: 1.5;
+    }
+    .main-question .highlight {
+      color: #ff6f00;
+    }
+    .sub-text {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .cta-btn {
+      display: block;
+      width: calc(100% - 48px);
+      margin: 18px auto 0;
+      padding: 18px;
+      background: #ff6f00;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      font-family: 'Noto Sans KR', sans-serif;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(255,111,0,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,111,0,0.45);
+    }
+    .cta-btn:active { transform: translateY(0); }
+
+    .stats-box {
+      margin: 28px 24px 0;
+      text-align: center;
+    }
+    .stats-label {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .stats-badge {
+      display: inline-block;
+      background: #222;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 8px 22px;
+      border-radius: 30px;
+    }
+
+    .share-section {
+      margin: 28px 24px 36px;
+      text-align: center;
+    }
+    .share-label {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 12px;
+    }
+    .share-icons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+    }
+    .share-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    .share-icon:hover { transform: scale(1.1); }
+    .share-icon.blue { background: #1877f2; color: #fff; }
+    .share-icon.yellow { background: #fee500; color: #3c1e1e; }
+
+    /* ══════════════ PAGE 2 ══════════════ */
+    .notice-banner {
+      background: #fff9c4;
+      margin: 0;
+      padding: 26px 20px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .notice-left {
+      flex: 1;
+    }
+    .notice-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #222;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 6px;
+    }
+    .notice-badge .alarm { font-size: 18px; }
+    .notice-character {
+      font-size: 64px;
+      line-height: 1;
+    }
+
+    .notice-content {
+      padding: 28px 24px 0;
+      text-align: center;
+    }
+    .notice-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #222;
+      line-height: 1.4;
+    }
+    .notice-title .orange { color: #ff6f00; }
+
+    .checklist {
+      margin: 24px 0 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.5;
+      padding: 0 4px;
+    }
+    .check-box {
+      width: 22px;
+      height: 22px;
+      background: #6c5ce7;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .check-box svg {
+      width: 13px;
+      height: 13px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .check-item .red { color: #e53935; font-weight: 600; }
+
+    .start-btn {
+      display: block;
+      width: calc(100% - 48px);
+      margin: 32px auto 36px;
+      padding: 18px;
+      background: #ff6f00;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      font-family: 'Noto Sans KR', sans-serif;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(255,111,0,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .start-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,111,0,0.45);
+    }
+    .start-btn:active { transform: translateY(0); }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Team!</h1>
+<div class="phone-wrap">
+
+  <!-- Header (공통) -->
+  <div class="header">
+    <div class="logo">
+      <i class="x-mark">✕</i>visa
+    </div>
+    <span class="page-title">F6 결혼비자 테스트</span>
+  </div>
+
+  <!-- ══ PAGE 1 ══ -->
+  <div class="page active" id="page1">
+    <div class="hero-banner">
+      <div class="hero-title">
+        <span>결혼비자</span>
+        <span>셀프테스트</span>
+      </div>
+      <div class="couple-img">👨‍💼👰</div>
+      <span class="squiggle">〰</span>
+      <span class="fork-icon">🍴</span>
+    </div>
+
+    <div class="content-section">
+      <p class="main-question">
+        외국인 배우자와<br>
+        <span class="highlight">국제 결혼비자를 준비 중인가요?</span>
+      </p>
+      <p class="sub-text">비자 허가 결과를 확인해보세요</p>
+    </div>
+
+    <button class="cta-btn" onclick="goPage2()">결혼비자 무료 테스트</button>
+
+    <div class="stats-box">
+      <p class="stats-label">테스트 참여자 수</p>
+      <span class="stats-badge">11110 명</span>
+    </div>
+
+    <div class="share-section">
+      <p class="share-label">테스트 공유하기</p>
+      <div class="share-icons">
+        <div class="share-icon blue">💬</div>
+        <div class="share-icon yellow">💛</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE 2 ══ -->
+  <div class="page" id="page2">
+    <div class="notice-banner">
+      <div class="notice-left">
+        <span class="notice-badge">
+          <span class="alarm">🚨</span> 유의사항
+        </span>
+      </div>
+      <div class="notice-character">🐻</div>
+    </div>
+
+    <div class="notice-content">
+      <p class="notice-title">
+        결혼비자 셀프 테스트<br>
+        <span class="orange">주의 사항 확인하고 시작하세요!</span>
+      </p>
+
+      <div class="checklist">
+        <div class="check-item">
+          <div class="check-box">
+            <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+          </div>
+          <span><span class="red">2025년 최신 법무부 매뉴얼 적용완료</span></span>
+        </div>
+        <div class="check-item">
+          <div class="check-box">
+            <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+          </div>
+          <span>결혼비자는 불허시 6개월 이후 재신청 가능</span>
+        </div>
+        <div class="check-item">
+          <div class="check-box">
+            <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+          </div>
+          <span>모든 서류 준비 후 제출해도 대사관에서 보완발생 가능</span>
+        </div>
+        <div class="check-item">
+          <div class="check-box">
+            <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+          </div>
+          <span>대행사 선정시 공식 법무부 지정 기관인지 체크 필수</span>
+        </div>
+        <div class="check-item">
+          <div class="check-box">
+            <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+          </div>
+          <span>대행사 이용시 외국어 서비스 지원하는지 체크</span>
+        </div>
+        <div class="check-item">
+          <div class="check-box">
+            <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+          </div>
+          <span>대행사 이용 시 환불 조건이 있는지 체크</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="start-btn">테스트시작</button>
+  </div>
+
+</div>
+
+<script>
+  function goPage2() {
+    document.getElementById('page1').classList.remove('active');
+    document.getElementById('page2').classList.add('active');
+    window.scrollTo(0, 0);
+  }
+</script>
 </body>
 </html>

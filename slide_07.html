@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>KOVINA Slide 06</title>
+
+<style>
+body {
+    margin: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* PPT 비율 */
+.wrapper {
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
+}
+
+/* 슬라이드 */
+.slide {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: grid;
+    grid-template-rows: 100px 1fr 80px;
+    padding: 40px 80px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* 배경 포인트 */
+.slide::before {
+    content: "";
+    position: absolute;
+    left: -120px;
+    top: -120px;
+    width: 280px;
+    height: 280px;
+    background: #f97316;
+    opacity: 0.06;
+    border-radius: 50%;
+}
+
+.slide::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    bottom: -120px;
+    width: 300px;
+    height: 300px;
+    background: #0ea5e9;
+    opacity: 0.06;
+    border-radius: 50%;
+}
+
+/* 상단 */
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* 중앙 */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 메인 제목 */
+.main-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+/* 좌우 구조 */
+.split {
+    display: flex;
+    gap: 50px;
+}
+
+/* 영역 */
+.section {
+    flex: 1;
+}
+
+/* 섹션 제목 */
+.section-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+/* 카드 */
+.card {
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 25px 30px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 카드 제목 */
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* 카드 설명 */
+.card-desc {
+    font-size: 18px;
+    color: #475569;
+}
+
+/* 색상 구분 */
+.left .section-title { color: #f97316; }
+.right .section-title { color: #0ea5e9; }
+
+.left .card-title { color: #ea580c; }
+.right .card-title { color: #0284c7; }
+
+/* 강조 박스 (법적 문구) */
+.notice {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 12px;
+    background: #f1f5f9;
+    font-size: 16px;
+    color: #334155;
+    line-height: 1.5;
+}
+
+/* 하단 */
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub {
+    font-size: 1.2vw;
+    color: #64748b;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="slide">
+
+    <!-- 상단 -->
+    <div class="header">
+        <div class="title">KOVINA</div>
+    </div>
+
+    <!-- 중앙 -->
+    <div class="main">
+
+        <div class="main-title">
+            수익모델 및 법적 리스크 대응
+        </div>
+
+        <div class="split">
+
+            <!-- 좌측: 수익모델 -->
+            <div class="section left">
+
+                <div class="section-title">수익모델</div>
+
+                <div class="card">
+                    <div class="card-title">Freemium 구조</div>
+                    <div class="card-desc">
+                        기본 진단 무료 제공 / 고급 분석 유료화
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">전문가 연계 수익</div>
+                    <div class="card-desc">
+                        행정사·전문가 상담 및 대행 연결 수수료
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">B2B 확장</div>
+                    <div class="card-desc">
+                        기업 외국인 인력 관리 및 대학 유학생 지원
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 우측: 법적 안전성 -->
+            <div class="section right">
+
+                <div class="section-title">법적 리스크 대응</div>
+
+                <div class="card">
+                    <div class="card-title">법률행위 아님</div>
+                    <div class="card-desc">
+                        판단이 아닌 정보 제공 중심 서비스
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">책임 제한 구조</div>
+                    <div class="card-desc">
+                        참고용 안내 및 결과 책임 범위 명확화
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">전문가 최종 판단</div>
+                    <div class="card-desc">
+                        실제 상담 및 의사결정은 전문가 수행
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 하단 -->
+    <div class="footer">
+        <div class="sub">Korea Visa Navigator</div>
+        <div class="sub">06</div>
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>

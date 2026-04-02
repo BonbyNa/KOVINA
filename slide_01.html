@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>KOVINA Slide 1</title>
+<style>
+    body {
+        margin: 0;
+        background: #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: 'Segoe UI', 'Noto Sans KR', sans-serif;
+    }
+
+    .slide {
+        width: 1920px;
+        height: 1080px;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        position: relative;
+        overflow: hidden;
+        padding: 80px;
+        box-sizing: border-box;
+    }
+
+    /* 배경 장식 */
+    .circle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.15;
+    }
+
+    .circle1 {
+        width: 600px;
+        height: 600px;
+        background: #3b82f6;
+        top: -200px;
+        right: -200px;
+    }
+
+    .circle2 {
+        width: 400px;
+        height: 400px;
+        background: #f97316;
+        bottom: -150px;
+        left: -150px;
+    }
+
+    /* 콘텐츠 */
+    .content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+    }
+
+    .logo {
+        font-size: 28px;
+        letter-spacing: 2px;
+        opacity: 0.8;
+        margin-bottom: 60px;
+    }
+
+    .title {
+        font-size: 110px;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .subtitle {
+        font-size: 42px;
+        color: #cbd5f5;
+        margin-bottom: 40px;
+    }
+
+    .tagline {
+        font-size: 32px;
+        color: #f97316;
+        font-weight: 600;
+        margin-bottom: 80px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 60px;
+        left: 80px;
+        font-size: 26px;
+        opacity: 0.7;
+    }
+
+    .presenter {
+        position: absolute;
+        bottom: 60px;
+        right: 80px;
+        font-size: 26px;
+        text-align: right;
+        opacity: 0.7;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="slide">
+
+    <!-- 배경 요소 -->
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+
+    <!-- 콘텐츠 -->
+    <div class="content">
+        <div class="logo">KOREA VISA NAVIGATOR</div>
+
+        <div class="title">KOVINA</div>
+
+        <div class="subtitle">Korea Visa Navigator</div>
+
+        <div class="tagline">
+            비자 판단, 이제 스스로 결정합니다
+        </div>
+    </div>
+
+    <!-- 하단 -->
+    <div class="footer">
+        고양 창조기업 지원센터 입주기업 발표
+    </div>
+
+    <div class="presenter">
+        발표자: 홍길동<br>
+        소속: 코비나
+    </div>
+
+</div>
+
+</body>
+</html>

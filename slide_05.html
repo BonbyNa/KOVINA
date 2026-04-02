@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>KOVINA Slide 05</title>
+
+<style>
+body {
+    margin: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* 비율 유지 */
+.wrapper {
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
+}
+
+/* 슬라이드 */
+.slide {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    
+    display: grid;
+    grid-template-rows: 100px 1fr 80px;
+    padding: 40px 80px;
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+/* 블루 장식 */
+.slide::after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    width: 320px;
+    height: 320px;
+    background: #2563eb;
+    opacity: 0.07;
+    border-radius: 50%;
+}
+
+/* 상단 */
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* 중앙 */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 제목 */
+.main-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+/* 흐름 컨테이너 */
+.flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 박스 */
+.box {
+    background: #f1f5ff;
+    border-radius: 16px;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+/* 강조 박스 */
+.box.highlight {
+    background: #2563eb;
+    color: #fff;
+}
+
+/* 화살표 */
+.arrow {
+    font-size: 28px;
+    color: #2563eb;
+}
+
+/* 하단 */
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub {
+    font-size: 1.2vw;
+    color: #64748b;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="slide">
+
+        <!-- 상단 -->
+        <div class="header">
+            <div class="title">KOVINA</div>
+        </div>
+
+        <!-- 중앙 -->
+        <div class="main">
+
+            <div class="main-title">
+                서비스는 이렇게 작동합니다
+            </div>
+
+            <div class="flow">
+
+                <div class="box">특정 비자 선택</div>
+                <div class="arrow">→</div>
+
+                <div class="box highlight">자동 진단</div>
+                <div class="arrow">→</div>
+
+                <div class="box">가능 여부 확인</div>
+                <div class="arrow">→</div>
+
+                <div class="box highlight">경로 분석</div>
+                <div class="arrow">→</div>
+
+                <div class="box">추가 조건 안내</div>
+
+            </div>
+
+        </div>
+
+        <!-- 하단 -->
+        <div class="footer">
+            <div class="sub">Korea Visa Navigator</div>
+            <div class="sub">05</div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

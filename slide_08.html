@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>KOVINA Slide 08</title>
+
+<style>
+body {
+    margin: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* 비율 */
+.wrapper {
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
+}
+
+/* 슬라이드 */
+.slide {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: grid;
+    grid-template-rows: 100px 1fr 80px;
+    padding: 40px 80px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* 배경 */
+.slide::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -120px;
+    width: 300px;
+    height: 300px;
+    background: #22c55e;
+    opacity: 0.06;
+    border-radius: 50%;
+}
+
+.slide::after {
+    content: "";
+    position: absolute;
+    left: -120px;
+    bottom: -120px;
+    width: 280px;
+    height: 280px;
+    background: #6366f1;
+    opacity: 0.06;
+    border-radius: 50%;
+}
+
+/* 상단 */
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* 중앙 */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 제목 */
+.main-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+/* 타임라인 */
+.timeline {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+}
+
+/* 카드 */
+.phase {
+    flex: 1;
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 기간 */
+.phase-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+/* 내용 */
+.phase-desc {
+    font-size: 20px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* 색상 */
+.phase1 .phase-title { color: #3b82f6; }
+.phase2 .phase-title { color: #f97316; }
+.phase3 .phase-title { color: #22c55e; }
+
+/* 화살표 */
+.arrow {
+    font-size: 36px;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+}
+
+/* 강조 */
+.highlight {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* 하단 */
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub {
+    font-size: 1.2vw;
+    color: #64748b;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="slide">
+
+    <!-- 상단 -->
+    <div class="header">
+        <div class="title">KOVINA</div>
+    </div>
+
+    <!-- 중앙 -->
+    <div class="main">
+
+        <div class="main-title">
+            입주 후 실행 계획
+        </div>
+
+        <div class="timeline">
+
+            <!-- 1단계 -->
+            <div class="phase phase1">
+                <div class="phase-title">0 ~ 3개월</div>
+                <div class="phase-desc">
+                    <span class="highlight">자동 진단 기능 MVP 개발</span><br>
+                    비자 판단 로직 구축 및 기본 데이터 정리
+                </div>
+            </div>
+
+            <div class="arrow">→</div>
+
+            <!-- 2단계 -->
+            <div class="phase phase2">
+                <div class="phase-title">3 ~ 6개월</div>
+                <div class="phase-desc">
+                    사용자 테스트 및 기능 개선<br>
+                    <span class="highlight">경로 분석 기능 추가</span>
+                </div>
+            </div>
+
+            <div class="arrow">→</div>
+
+            <!-- 3단계 -->
+            <div class="phase phase3">
+                <div class="phase-title">6 ~ 12개월</div>
+                <div class="phase-desc">
+                    전문가 연계 기반<br>
+                    <span class="highlight">수익화 구조 실행</span><br>
+                    B2B 확장 검토
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 하단 -->
+    <div class="footer">
+        <div class="sub">Korea Visa Navigator</div>
+        <div class="sub">08</div>
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>

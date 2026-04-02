@@ -4,109 +4,108 @@
 <meta charset="UTF-8">
 <title>KOVINA Slide 1</title>
 <style>
-    body {
-        margin: 0;
-        background: #111;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-family: 'Segoe UI', 'Noto Sans KR', sans-serif;
-    }
+body {
+    margin: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', 'Noto Sans KR', sans-serif;
+}
 
-    .slide {
-        width: 1920px;
-        height: 1080px;
-        background: linear-gradient(135deg, #0f172a, #1e293b);
-        color: white;
-        position: relative;
-        overflow: hidden;
-        padding: 80px;
-        box-sizing: border-box;
-    }
+.slide {
+    width: 1920px;
+    height: 1080px;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    position: relative;   /* ✅ footer/presenter 기준점 */
+    overflow: hidden;
+    padding: 80px;
+    box-sizing: border-box;
+}
 
-    /* 배경 장식 */
-    .circle {
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.15;
-    }
+/* 배경 장식 */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+}
 
-    .circle1 {
-        width: 600px;
-        height: 600px;
-        background: #3b82f6;
-        top: -200px;
-        right: -200px;
-    }
+.circle1 {
+    width: 600px;
+    height: 600px;
+    background: #3b82f6;
+    top: -200px;
+    right: -200px;
+}
 
-    .circle2 {
-        width: 400px;
-        height: 400px;
-        background: #f97316;
-        bottom: -150px;
-        left: -150px;
-    }
+.circle2 {
+    width: 400px;
+    height: 400px;
+    background: #f97316;
+    bottom: -150px;
+    left: -150px;
+}
 
-    /* 콘텐츠 */
-    .content {
-        position: relative;
-        z-index: 2;
-        max-width: 1200px;
-    }
+/* 콘텐츠 */
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+}
 
-    .logo {
-        font-size: 28px;
-        letter-spacing: 2px;
-        opacity: 0.8;
-        margin-bottom: 60px;
-    }
+.logo {
+    font-size: 28px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    margin-bottom: 60px;
+}
 
-    .title {
-        font-size: 110px;
-        font-weight: 800;
-        margin-bottom: 20px;
-    }
+.title {
+    font-size: 110px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
 
-    .subtitle {
-        font-size: 42px;
-        color: #cbd5f5;
-        margin-bottom: 40px;
-    }
+.subtitle {
+    font-size: 42px;
+    color: #cbd5f5;
+    margin-bottom: 40px;
+}
 
 .tagline {
     position: absolute;
-    top: 65%;   /* 50% → 65% */
+    top: 65%;   /* 중앙보다 조금 아래 */
     left: 50%;
     transform: translate(-50%, -50%);
-
     font-size: 80px;
     line-height: 1.3;
     text-align: center;
-
     color: #f97316;
     font-weight: 700;
-
     width: 100%;
     letter-spacing: -1px;
-    margin-top: 80px;     /* 타이틀과 간격 확보 */
+}
 
-    .footer {
-        position: absolute;
-        bottom: 60px;
-        left: 80px;
-        font-size: 40px;
-        opacity: 0.7;
-    }
+/* 하단 */
+.footer {
+    position: absolute;
+    bottom: 60px;
+    left: 80px;
+    font-size: 40px;
+    opacity: 0.7;
+}
 
-    .presenter {
-        position: absolute;
-        bottom: 60px;
-        right: 80px;
-        font-size: 40px;
-        text-align: right;
-        opacity: 0.7;
-    }
+.presenter {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 40px;
+    text-align: right;
+    opacity: 0.7;
+}
+
 </style>
 </head>
 

@@ -15,7 +15,7 @@ body {
     font-family: 'Pretendard', sans-serif;
 }
 
-/* 비율 */
+/* PPT 비율 */
 .wrapper {
     width: 100%;
     max-width: 1280px;
@@ -27,25 +27,35 @@ body {
     width: 100%;
     height: 100%;
     background: #ffffff;
-    
     display: grid;
     grid-template-rows: 100px 1fr 80px;
     padding: 40px 80px;
     box-sizing: border-box;
-
     position: relative;
 }
 
-/* 블루 장식 */
+/* 배경 포인트 */
+.slide::before {
+    content: "";
+    position: absolute;
+    left: -120px;
+    bottom: -120px;
+    width: 300px;
+    height: 300px;
+    background: #0ea5e9;
+    opacity: 0.07;
+    border-radius: 50%;
+}
+
 .slide::after {
     content: "";
     position: absolute;
     right: -100px;
     top: -100px;
-    width: 320px;
-    height: 320px;
-    background: #2563eb;
-    opacity: 0.07;
+    width: 280px;
+    height: 280px;
+    background: #6366f1;
+    opacity: 0.06;
     border-radius: 50%;
 }
 
@@ -67,46 +77,82 @@ body {
     justify-content: center;
 }
 
-/* 제목 */
+/* 메인 제목 */
 .main-title {
-    font-size: 48px;
+    font-size: 46px;
     font-weight: 800;
     margin-bottom: 50px;
 }
 
-/* 병렬 컨테이너 */
+/* 병렬 구조 */
 .parallel {
     display: flex;
-    gap: 40px;
+    gap: 50px;
 }
 
 /* 카드 */
 .card {
     flex: 1;
-    background: #f1f5ff;
+    background: #f8fafc;
     border-radius: 20px;
     padding: 40px;
+    position: relative;
 }
 
 /* 카드 제목 */
 .card-title {
     font-size: 26px;
     font-weight: 800;
-    color: #2563eb;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-/* 카드 내용 */
-.card-content {
-    font-size: 22px;
-    line-height: 1.6;
+/* 타임라인 */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+/* 세로 라인 */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #cbd5f5;
+}
+
+/* 각 단계 */
+.step {
+    position: relative;
+    margin-bottom: 28px;
+    font-size: 20px;
     color: #334155;
 }
 
+/* 원형 포인트 */
+.step::before {
+    content: "";
+    position: absolute;
+    left: -22px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+/* 색상 분리 (좌/우) */
+.card.left .card-title { color: #2563eb; }
+.card.left .step::before { background: #2563eb; }
+
+.card.right .card-title { color: #7c3aed; }
+.card.right .step::before { background: #7c3aed; }
+
 /* 강조 */
 .highlight {
-    color: #1e40af;
     font-weight: 700;
+    color: #0f172a;
 }
 
 /* 하단 */
@@ -126,55 +172,60 @@ body {
 <body>
 
 <div class="wrapper">
-    <div class="slide">
+<div class="slide">
 
-        <!-- 상단 -->
-        <div class="header">
-            <div class="title">KOVINA</div>
+    <!-- 상단 -->
+    <div class="header">
+        <div class="title">KOVINA</div>
+    </div>
+
+    <!-- 중앙 -->
+    <div class="main">
+
+        <div class="main-title">
+            서비스 구조 및 작동 방식
         </div>
 
-        <!-- 중앙 -->
-        <div class="main">
+        <div class="parallel">
 
-            <div class="main-title">
-                두 가지 핵심 기능으로 구성됩니다
-            </div>
-
-            <div class="parallel">
-
-                <!-- 기능 1 -->
-                <div class="card">
-                    <div class="card-title">
-                        특정 비자 자동 진단
-                    </div>
-                    <div class="card-content">
-                        특정 비자의 발급 가능 여부를<br>
-                        <span class="highlight">즉시 확인</span>
-                    </div>
+            <!-- 자동 진단 -->
+            <div class="card left">
+                <div class="card-title">
+                    특정 비자 자동 진단
                 </div>
 
-                <!-- 기능 2 -->
-                <div class="card">
-                    <div class="card-title">
-                        체류자격 경로 분석
-                    </div>
-                    <div class="card-content">
-                        이동 가능한 상위 비자 유형과<br>
-                        <span class="highlight">추가 요구 조건 안내</span>
-                    </div>
+                <div class="timeline">
+                    <div class="step">비자 유형 선택</div>
+                    <div class="step">간단 문항 순차 응답</div>
+                    <div class="step"><span class="highlight">가능성 결과 즉시 확인</span></div>
+                    <div class="step">관련 추가 정보 제공</div>
                 </div>
-
             </div>
 
-        </div>
+            <!-- 경로 분석 -->
+            <div class="card right">
+                <div class="card-title">
+                    체류자격 경로 분석
+                </div>
 
-        <!-- 하단 -->
-        <div class="footer">
-            <div class="sub">Korea Visa Navigator</div>
-            <div class="sub">05</div>
+                <div class="timeline">
+                    <div class="step">현재 체류자격 선택</div>
+                    <div class="step">이동 가능한 상위 비자 제시</div>
+                    <div class="step"><span class="highlight">추가 요구 조건 안내</span></div>
+                </div>
+            </div>
+
         </div>
 
     </div>
+
+    <!-- 하단 -->
+    <div class="footer">
+        <div class="sub">Korea Visa Navigator</div>
+        <div class="sub">05</div>
+    </div>
+
+</div>
 </div>
 
 </body>

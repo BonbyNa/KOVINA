@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>KOVINA Slide 04</title>
+
+<style>
+body {
+    margin: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* 비율 유지 */
+.wrapper {
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
+}
+
+/* 슬라이드 */
+.slide {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    
+    display: grid;
+    grid-template-rows: 100px 1fr 80px;
+    padding: 40px 80px;
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+/* 🔥 블루 배경 장식 */
+.slide::after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    width: 320px;
+    height: 320px;
+    background: #2563eb;
+    opacity: 0.07;
+    border-radius: 50%;
+}
+
+/* 상단 */
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+}
+
+/* 중앙 */
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+}
+
+/* 🔥 좌측 라인도 블루 */
+.main::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 6px;
+    height: 80%;
+    background: #2563eb;
+    border-radius: 3px;
+}
+
+/* 제목 */
+.main-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #111;
+}
+
+/* 박스 */
+.content-box {
+    background: #f1f5ff;
+    padding: 30px 40px;
+    border-radius: 16px;
+}
+
+/* 내용 */
+.content {
+    font-size: 28px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+/* 🔥 핵심 강조 (블루) */
+.highlight {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* 기능 블록 */
+.feature {
+    margin-bottom: 20px;
+}
+
+/* 하단 */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.sub {
+    font-size: 1.2vw;
+    color: #64748b;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="slide">
+
+        <!-- 상단 -->
+        <div class="header">
+            <div class="title">KOVINA</div>
+        </div>
+
+        <!-- 중앙 -->
+        <div class="main">
+
+            <div class="main-title">
+                해결책은 코비나입니다
+            </div>
+
+            <div class="content-box">
+                <div class="content">
+
+                    <div class="feature">
+                        • <span class="highlight">특정 비자 자동 진단</span><br>
+                        → 해당 비자의 발급 가능 여부를 즉시 확인
+                    </div>
+
+                    <div class="feature">
+                        • <span class="highlight">체류자격 경로 분석</span><br>
+                        → 현재 비자에서 이동 가능한 상위 비자 유형과<br>
+                        &nbsp;&nbsp;&nbsp;추가 요구 조건을 안내
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 하단 -->
+        <div class="footer">
+            <div class="sub">Korea Visa Navigator</div>
+            <div class="sub">04</div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

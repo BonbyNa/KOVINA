@@ -2,117 +2,74 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>KOVINA Slide 1</title>
+<title>KOVINA PPT Cover</title>
+
 <style>
-    body {
-        margin: 0;
-        background: #111;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-family: 'Segoe UI', 'Noto Sans KR', sans-serif;
-    }
+body {
+    margin: 0;
+    background: #f8fafc;
+    font-family: 'Pretendard', sans-serif;
+}
 
-    .slide {
-        width: 1920px;
-        height: 1080px;
-        background: linear-gradient(135deg, #0f172a, #1e293b);
-        color: white;
-        position: relative;
-        overflow: hidden;
-        padding: 80px;
-        box-sizing: border-box;
-    }
+/* 슬라이드 전체 */
+.slide {
+    width: 1280px;
+    height: 720px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    
+    display: grid;
+    grid-template-rows: 100px 1fr 80px;
+    padding: 40px 80px;
+    box-sizing: border-box;
+}
 
-    /* 배경 장식 */
-    .circle {
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.15;
-    }
+/* 상단 브랜드 */
+.header {
+    display: flex;
+    align-items: center;
+}
 
-    .circle1 {
-        width: 600px;
-        height: 600px;
-        background: #3b82f6;
-        top: -200px;
-        right: -200px;
-    }
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 1px;
+}
 
-    .circle2 {
-        width: 400px;
-        height: 400px;
-        background: #f97316;
-        bottom: -150px;
-        left: -150px;
-    }
-
-    /* 콘텐츠 */
-    .content {
-        position: relative;
-        z-index: 2;
-        max-width: 1200px;
-    }
-
-    .logo {
-        font-size: 28px;
-        letter-spacing: 2px;
-        opacity: 0.8;
-        margin-bottom: 60px;
-    }
-
-    .title {
-        position: absolute;
-        top: 60px;
-        left: 80px;
-
-        font-size: 28px;
-        font-weight: 700;
-        color: #111;
-
-        letter-spacing: 1px;
-    }
-
-    .subtitle {
-        font-size: 42px;
-        color: #cbd5f5;
-        margin-bottom: 40px;
-    }
+/* 중앙 메시지 */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
 .tagline {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    font-size: 80px;
+    font-size: 76px;
     line-height: 1.3;
-    text-align: center;
-
+    font-weight: 800;
     color: #f97316;
-    font-weight: 700;
-
-    width: 80%;
     letter-spacing: -1px;
 }
 
-    .footer {
-        position: absolute;
-        bottom: 60px;
-        left: 80px;
-        font-size: 36px;
-        opacity: 0.7;
-    }
+/* 하단 보조 정보 */
+.footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
 
-    .presenter {
-        position: absolute;
-        bottom: 60px;
-        right: 80px;
-        font-size: 36px;
-        text-align: right;
-        opacity: 0.7;
-    }
+.sub {
+    font-size: 18px;
+    color: #64748b;
+}
+
+/* 강조 포인트 */
+.highlight {
+    color: #ea580c;
+}
+
 </style>
 </head>
 
@@ -120,32 +77,23 @@
 
 <div class="slide">
 
-    <!-- 배경 요소 -->
-    <div class="circle circle1"></div>
-    <div class="circle circle2"></div>
-
-    <!-- 콘텐츠 -->
-    <div class="content">
-        <div class="logo">KOREA VISA NAVIGATOR</div>
-
+    <!-- 상단 -->
+    <div class="header">
         <div class="title">KOVINA</div>
+    </div>
 
-        <div class="subtitle">Korea Visa Navigator</div>
-
+    <!-- 중앙 -->
+    <div class="main">
         <div class="tagline">
             비자 가능성,<br>
-            지금 바로 확인하세요
+            <span class="highlight">지금 바로 확인하세요</span>
         </div>
     </div>
 
     <!-- 하단 -->
     <div class="footer">
-        고양 1인 창조기업 지원센터
-    </div>
-
-    <div class="presenter">
-        행정사 김경옥<br>
-        HEIN Adminstrative Office
+        <div class="sub">Korea Visa Navigator</div>
+        <div class="sub">발표자: 홍길동</div>
     </div>
 
 </div>

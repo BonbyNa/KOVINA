@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>KOVINA Slide 10</title>
+
+<style>
+body {
+    margin: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* PPT 비율 */
+.wrapper {
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
+}
+
+/* 슬라이드 */
+.slide {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: grid;
+    grid-template-rows: 100px 1fr 80px;
+    padding: 40px 80px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* 배경 */
+.slide::before {
+    content: "";
+    position: absolute;
+    left: -120px;
+    bottom: -120px;
+    width: 280px;
+    height: 280px;
+    background: #6366f1;
+    opacity: 0.06;
+    border-radius: 50%;
+}
+
+.slide::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -120px;
+    width: 280px;
+    height: 280px;
+    background: #22c55e;
+    opacity: 0.06;
+    border-radius: 50%;
+}
+
+/* 상단 */
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* 중앙 */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 제목 */
+.main-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+/* 카드 구조 */
+.cards {
+    display: flex;
+    gap: 30px;
+}
+
+/* 카드 */
+.card {
+    flex: 1;
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 카드 제목 */
+.card-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+/* 내용 */
+.card-desc {
+    font-size: 20px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* 색상 */
+.card1 .card-title { color: #3b82f6; }
+.card2 .card-title { color: #f97316; }
+.card3 .card-title { color: #22c55e; }
+
+/* 강조 */
+.highlight {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* 하단 */
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub {
+    font-size: 1.2vw;
+    color: #64748b;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="slide">
+
+    <!-- 상단 -->
+    <div class="header">
+        <div class="title">KOVINA</div>
+    </div>
+
+    <!-- 중앙 -->
+    <div class="main">
+
+        <div class="main-title">
+            왜 KOVINA인가
+        </div>
+
+        <div class="cards">
+
+            <!-- WHY YOU -->
+            <div class="card card1">
+                <div class="card-title">WHY YOU</div>
+                <div class="card-desc">
+                    <span class="highlight">출입국 행정 실무 경험</span><br>
+                    현장의 문제를 직접 이해<br>
+                    실행 가능한 역량 보유
+                </div>
+            </div>
+
+            <!-- WHY NOW -->
+            <div class="card card2">
+                <div class="card-title">WHY NOW</div>
+                <div class="card-desc">
+                    외국인 증가 및 정보 수요 확대<br>
+                    <span class="highlight">지금이 가장 적절한 시점</span>
+                </div>
+            </div>
+
+            <!-- WHY CENTER -->
+            <div class="card card3">
+                <div class="card-title">WHY CENTER</div>
+                <div class="card-desc">
+                    창업센터 인프라 및 네트워크 활용<br>
+                    <span class="highlight">빠른 실행과 안정적 성장</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 하단 -->
+    <div class="footer">
+        <div class="sub">Korea Visa Navigator</div>
+        <div class="sub">10</div>
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>
